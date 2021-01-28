@@ -1,5 +1,7 @@
 # DONALD 2021 LOCAL
 
+&copy; 2021 Maarten Meijer / AUAS
+
 ## Introduction
 
 For a full description see [Full Donald 2021 on Github](https://github.com/mjmeijer/donald_2021).
