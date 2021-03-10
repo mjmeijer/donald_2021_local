@@ -55,7 +55,7 @@ This repo is the local version used by students to change and develop their own 
 
   - You can also use conditional logic to change the color of each corner. See the [3.1: Conditional statements video](https://youtu.be/1Osb_iGDdjk) and the [`if-else` Reference](https://p5js.org/reference/#/p5/if-else). Find this part of the code:
 
-  ![]()
+  ![showTestStep](docs/showTestStep.png)
 
   Then change the whole blok to
 ```js
