@@ -140,7 +140,7 @@ function showTestStep(index) {
 
 ```
 
-## Advanced changes
+## Advanced changes to buttons
 
  - You can also open the file `donald_20201_local.js` and look for the function `buttons(...)`. There you can change the look of the buttons by changing the code. For example to give each of the 4 buttons a different color, change the code as follows:
 ```js
@@ -164,6 +164,11 @@ function buttons(x, y, w, h) {
  - this will give you the following:
   ![Color Buttons](docs/color-buttons.png)
 
+  - **Please note that using primary colors is not very original or creative as you can see here** :
+  ![not creative](docs/not-original.jpg)
+
+## Auto downloading the screen images
+
  - You can save images of each animation step (for your report) by adding one line of code at then end of an animation routine:
 ```js
   saveCanvas('animation-step', 'png');
@@ -181,10 +186,9 @@ function buttons(x, y, w, h) {
 }
  ```
 
+## Even more nerdy tips
 
-## Even more tips
-
-  - Turn on the inspector in your browser. Then you can see some of the print statements.
+  - Turn on the _inspector_ in your browser. Then you can see some of the print statements.
 
   ![browser inspector on](docs/browser-inspector.png)
 
