@@ -167,7 +167,7 @@ function buttons(x, y, w, h) {
   - **Please note that using primary colors is not very original or creative as you can see here** :
   ![not creative](docs/not-original.jpg)
 
-## Auto downloading the screen images
+## Auto downloading screen images
 
  - You can save images of each animation step (for your report) by adding one line of code at then end of an animation routine:
 ```js
