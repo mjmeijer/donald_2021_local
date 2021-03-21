@@ -14,6 +14,37 @@ var T6_CORRECT     = 120;
 var T7_INCORRECT   = 120;
 
 //
+//  custom_buttons - to customize the look of teh buttons
+//  uncomment and modify this code
+//
+// function custom_buttons(x, y, w, h) {
+//   push();
+//   w2 = w / 2;
+//   h2 = h / 2;
+//   translate(x, y);
+//   stroke(127, 127, 127);
+//   fill(30, 10, 10, 127);
+//   rect(0, 0, w2, h2);
+//   fill(10, 30, 10, 127);
+//   rect(w2, 0, w2, h2);
+//   fill(10, 10, 30, 127);
+//   rect(0, h2, w2, h2);
+//   fill(30, 30, 0, 127);
+//   rect(w2, h2, w2, h2);
+//
+//   fill('grey');
+//   textSize(36);
+//   textAlign(CENTER, CENTER);
+//   w3 = w2/2;
+//   h3 = h2/2;
+//   text("0", w3, h3);
+//   text("1", w3, h3 + h2);
+//   text("2", w3 + w2, h3 + h2);
+//   text("3", w3 + w2, h3);
+//   pop();
+// }
+
+//
 //  F0 shows the attention grabbing animation meant to seduce you to interact
 //
 //
