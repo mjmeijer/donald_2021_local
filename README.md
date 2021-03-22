@@ -142,9 +142,9 @@ function showTestStep(index) {
 
 ## Advanced changes to buttons
 
- - You can also open the file `donald_20201_local.js` and look for the function `buttons(...)`. There you can change the look of the buttons by changing the code. For example to give each of the 4 buttons a different color, change the code as follows:
+ - You can also open the file `animations.js` and look for the function `custom_buttons(...)`. Please uncomment this function by removing the `//` before every line. There you can change the look of the buttons by changing the code. For example to give each of the 4 buttons a different color, change the code as follows:
 ```js
-function buttons(x, y, w, h) {
+function custom_buttons(x, y, w, h) {
   push();
   w2 = w / 2;
   h2 = h / 2;
@@ -164,8 +164,9 @@ function buttons(x, y, w, h) {
  - this will give you the following:
   ![Color Buttons](docs/color-buttons.png)
 
-  - **Please note that using primary colors is not very original or creative as you can see here** :
+  - **Please note that using primary colors is NOT very original or creative as you can below. So please think of something else!**
   ![not creative](docs/not-original.jpg)
+  Maybe match your color scheme to the use context that you have in _Ontwerpen 3 Project Interactie_.
 
 ## Auto downloading screen images
 
