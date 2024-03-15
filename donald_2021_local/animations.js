@@ -14,7 +14,7 @@ var T6_CORRECT     = 120;
 var T7_INCORRECT   = 120;
 
 //
-//  custom_buttons - to customize the look of teh buttons
+//  custom_buttons - to customize the look of the buttons
 //  uncomment and modify this code
 //
 // function custom_buttons(x, y, w, h) {
@@ -22,14 +22,18 @@ var T7_INCORRECT   = 120;
 //   w2 = w / 2;
 //   h2 = h / 2;
 //   translate(x, y);
+//
+//    bcolor = color(127, 127, 127, 127);
+//   if (testLevel > 3) {
+//     bcolor = color(0, 0, 0, 127);
+//   }
+//
+//
 //   stroke(127, 127, 127);
-//   fill(30, 10, 10, 127);
+//   fill(bcolor);
 //   rect(0, 0, w2, h2);
-//   fill(10, 30, 10, 127);
 //   rect(w2, 0, w2, h2);
-//   fill(10, 10, 30, 127);
 //   rect(0, h2, w2, h2);
-//   fill(30, 30, 0, 127);
 //   rect(w2, h2, w2, h2);
 //
 //   fill('grey');
@@ -45,12 +49,22 @@ var T7_INCORRECT   = 120;
 // }
 
 //
+// uncomment and change tis code when you want something else than reset to level 0 or timeout
+//
+//function custom_timeout()
+//{
+//  testLevel = Math.max(testLevel - 2,0);
+//}
+
+
+
+//
 //  F0 shows the attention grabbing animation meant to seduce you to interact
 //
 //
 var idleColors = new Array(
   180, // snigle digit grey scale
-  'red', // named color
+  'white', // named color
   '#fae', // three digit hex
   '#222222', // six digit hex
   'rgb(10,255,0)', // integer rgb value
@@ -68,7 +82,7 @@ function showIdle() {
   if (frameCount % T0_IDLE == 0) {
     showButtons();
     showLeds(idleColors);
-    idleColors.rotateRight(1);
+    idleColors.rotateRight(-1);
   }
 }
 
@@ -228,9 +242,9 @@ var successColors = new Array(
 function showSuccess() {
   // no animation yet in this code
   if (frameCount % (T6_CORRECT / 12) == 0) {
-  showButtons();
-  showLeds(successColors);
-}
+    showButtons();
+    showLeds(successColors);
+  }
 }
 //
 //  F7 alas, you failed to enter the correct sequence
@@ -254,7 +268,7 @@ var failColors = new Array(
 function showFailure() {
   // no animation yet in this code
   if (frameCount % (T7_INCORRECT / 12) == 0) {
-  showButtons();
-  showLeds(failColors);
-}
+    showButtons();
+    showLeds(failColors);
+  }
 }
