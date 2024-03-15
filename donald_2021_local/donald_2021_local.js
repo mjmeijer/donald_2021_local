@@ -241,7 +241,7 @@ function handleTimeOut() {
   // TODO post the result as timeout
   if (frameCount - startFrame > T5_TIMEOUT) {
     if(typeof custom_timeout === "function"){
-      change_state(custom_timeout());
+      changeState(custom_timeout());
     } else {
       testLevel = 0;
       changeState(0);
