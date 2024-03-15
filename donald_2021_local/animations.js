@@ -54,6 +54,7 @@ var T7_INCORRECT   = 120;
 //function custom_timeout()
 //{
 //  testLevel = Math.max(testLevel - 2,0);
+// return 1; // new state
 //}
 
 
