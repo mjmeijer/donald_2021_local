@@ -1,3 +1,17 @@
+//
+// (c) Copyright 2021-2025 Maarten Meijer / Amsterdam University of Applied Science
+//
+// IMPORTANT! DO NOT MAKE ANY CHANGES IN THIS FILE!!
+//
+//  All Donald improvements must be realised by changes in the file animations.js
+//  or they canot be used in the A/B testing set up on the server.
+//
+//  Instructions for possible changes are provided on the Github page where you got
+//  this code.
+//
+//  In der Beschränkung zeigt sich erst der Meister -- J W von Goethe (1802)
+//
+
 Array.prototype.rotateRight = function( n ) {
   this.unshift.apply( this, this.splice( n, this.length ) );
   return this;
@@ -26,7 +40,13 @@ function setup() {
   background(10);
   stroke(0);
   testCounter = 0;
-  print("Hello Donad_2021");
+  if(typeof custom_setup === "function"){
+    custom_setup(windowWidth, windowHeight);
+  }
+
+  print("Hello Donald_2021");
+  
+  
 }
 
 function windowResized() {

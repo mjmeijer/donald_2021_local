@@ -1,4 +1,6 @@
 //
+// (c) Copyright 2021-2025 Maarten Meijer / Amsterdam University of Applied Science
+//
 // game.js
 //
 //  a game is representen by an array of values
