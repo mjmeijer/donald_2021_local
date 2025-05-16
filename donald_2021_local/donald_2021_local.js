@@ -44,7 +44,7 @@ function setup() {
     custom_setup(windowWidth, windowHeight);
   }
 
-  print("Hello Donald_2025");
+//  print("Hello Donald_2025");
 }
 
 function windowResized() {
@@ -60,8 +60,22 @@ function distance(x1, y1, x2, y2) {
   return sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 }
 
+/* prevents the mobile browser from processing some default
+ * touch events, like swiping left for "back" or scrolling
+ * the page.
+ */
+function touchStarted(){
+  if(isLooping()) return false;
+}
+
+function touchMoved(){
+  if(isLooping()) return false;
+}
+
 
 function touchEnded() {
+  if(isLooping()) {
+
   ellipse(mouseX, mouseY, 50, 50);
 
   if (distance(mouseX, mouseY, windowWidth/2, windowHeight/2) < 150) {
@@ -77,6 +91,8 @@ function touchEnded() {
     b += 1;
   }
   lastButton = Array(0, 1, 3, 2)[b];
+  return false;
+  }
 }
 
 function ledring(x, y, colors) {
@@ -89,7 +105,7 @@ function ledring(x, y, colors) {
   fill('rgb(10,255,0)');
   textAlign(CENTER, CENTER);
   textSize(32);
-  //  text('level ' + testLevel, 0, -20);
+//  text('level ' + testLevel, 0, -20);
   text(testID, 0, 0);
   textSize(16);
   text('level ' + testLevel, 0, -40);
@@ -162,12 +178,14 @@ function postResults(req, rec, status, time) {
 var activityState = 0;
 var testLevel = 0;
 var lastButton = -1;
+var lastLevel = -1;
 var currentLevel = -1;
 var startFrame;
 var test;
 var game, reply;
 function changeState(newState) {
   startFrame = frameCount;
+  lastLevel = currentLevel;
   currentLevel = testLevel;
   lastButton = -1;
   activityState = newState;
