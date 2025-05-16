@@ -168,6 +168,17 @@ function custom_buttons(x, y, w, h) {
   ![not creative](docs/not-original.jpg)
   Maybe match your color scheme to the use context that you have in _Ontwerpen 3 Project Interactie_.
 
+## Advanced changes to program flow
+
+ - You can also open the file `animations.js` and look for the functions `custom_setup(...)`, `custom_predraw(...)` and `custom_postdraw()`. Please uncomment these function by removing the `//` before every line. Youy can usea a value other than 0-7 for `activityState` to prevent the normal animation to show in the `draw()` loop. You can also look at using the functions `noLoop()`, `isLooping()` and `startLoop()` to stop the normal `draw()` loop and show your own information. Don't forget to call `startLoop()` at some point to allow playing the game! 
+```js
+function custom_setup(w, h) {
+  noLoop();
+  //handle your own setup stuff until done
+  startLoop();
+}
+```
+
 ## Auto downloading screen images
 
  - You can save images of each animation step (for your report) by adding one line of code at then end of an animation routine:
