@@ -40,13 +40,11 @@ function setup() {
   background(10);
   stroke(0);
   testCounter = 0;
-  if(typeof custom_setup === "function"){
+  if (typeof custom_setup === "function") {
     custom_setup(windowWidth, windowHeight);
   }
 
-  print("Hello Donald_2021");
-  
-  
+  print("Hello Donald_2025");
 }
 
 function windowResized() {
@@ -91,7 +89,7 @@ function ledring(x, y, colors) {
   fill('rgb(10,255,0)');
   textAlign(CENTER, CENTER);
   textSize(32);
-//  text('level ' + testLevel, 0, -20);
+  //  text('level ' + testLevel, 0, -20);
   text(testID, 0, 0);
   textSize(16);
   text('level ' + testLevel, 0, -40);
@@ -130,7 +128,7 @@ function buttons(x, y, w, h) {
 }
 
 function showButtons() {
-  if(typeof custom_buttons === "function"){
+  if (typeof custom_buttons === "function") {
     custom_buttons(0, 0, windowWidth, windowHeight);
   } else {
     buttons(0, 0, windowWidth, windowHeight);
@@ -181,7 +179,7 @@ function changeState(newState) {
 function handleIdle() {
   showIdle();
   if (lastButton != -1) {
-//    print("lastButton = " + lastButton);
+    //    print("lastButton = " + lastButton);
     testLevel = 2;
     changeState(1);
   }
@@ -206,7 +204,7 @@ function handleShowTest() {
     return;
   }
   if (frameCount % T2_SHOWTEST == 0) {
-    if(currentLevel > 0) {
+    if (currentLevel > 0) {
       showTestStep(game.getValue(testLevel - currentLevel));
     }
     currentLevel = currentLevel - 1;
@@ -237,7 +235,7 @@ function handleCheckResponse() {
     break;
   default:
     reply.push(lastButton);
-//  print('expected : ' + game.getValue(testLevel - currentLevel) + ', received : ' + lastButton);
+    //  print('expected : ' + game.getValue(testLevel - currentLevel) + ', received : ' + lastButton);
     if (lastButton != game.getValue(testLevel - currentLevel)) {
       postResults(game.toString(), '' + reply, 'wrong', frameCount - startFrame);
       lastButton = -1;
@@ -260,13 +258,13 @@ function handleTimeOut() {
   showTimeout();
   // TODO post the result as timeout
   if (frameCount - startFrame > T5_TIMEOUT) {
-    if(typeof custom_timeout === "function"){
+    if (typeof custom_timeout === "function") {
       changeState(custom_timeout());
     } else {
       testLevel = 0;
       changeState(0);
     }
-//    print("Timeout!");
+    //    print("Timeout!");
   }
 }
 
@@ -276,7 +274,7 @@ function handleSuccess() {
   // TODO post the result as success
   if (frameCount - startFrame > T6_CORRECT) {
     testLevel += 1;
-//    print("Success! new test level : " + testLevel);
+    //    print("Success! new test level : " + testLevel);
     changeState(1);
   }
 }
@@ -287,7 +285,7 @@ function handleFailure() {
   // TODO post the result as failure
   if (frameCount - startFrame > T7_INCORRECT) {
     testLevel = max(testLevel - 1, 0) ;
-//    print("Failure! new test level : " + testLevel);
+    //    print("Failure! new test level : " + testLevel);
     if (testLevel == 0) {
       changeState(0);
     } else {
@@ -298,6 +296,9 @@ function handleFailure() {
 
 // the short term memory tester program works from a gameloop or activity state machine
 function draw() {
+  if (typeof custom_predraw === "function") {
+    custom_predraw();
+  }
   //  print('current activityState : ' + activityState + ', test level : ' + testLevel + ', current level : ' + currentLevel);
   switch(activityState) {
   case 0:
@@ -326,5 +327,8 @@ function draw() {
     break;
   default:
     break;
+  }
+  if (typeof custom_postdraw === "function") {
+    custom_postdraw();
   }
 }

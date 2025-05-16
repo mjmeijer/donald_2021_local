@@ -1,8 +1,8 @@
 //
 // (c) Copyright 2021-2025 Maarten Meijer / Amsterdam University of Applied Science
-// 
+//
 // timings in frames not milliseconds! Running at 60 FPS so the timing in seconds
-// can be calculated as for example T1_WARN : 
+// can be calculated as for example T1_WARN :
 //            120 frames / 60 frames per second = 2 seconds
 //
 //
@@ -56,7 +56,7 @@ var T7_INCORRECT   = 120;
 // }
 
 //
-// uncomment and change tis code when you want something else than reset to level 0 or timeout
+// uncomment and change this code when you want something else than reset to level 0 or timeout
 //
 //function custom_timeout()
 //{
@@ -64,7 +64,30 @@ var T7_INCORRECT   = 120;
 // return 1; // new state
 //}
 
+//
+// uncomment and change this code when you want something else _before_ the standard idle animation
+//
+// function custom_setup(wwidth, wheight)
+// {
+// }
 
+//
+// uncomment and change this code when you want to intervene _before_ the animation loop
+//
+// setting variable 'activityState' to any value outside range 0-7 will override normal drawing
+//
+// function custom_predraw()
+// {
+// }
+
+//
+// uncomment and change this code when you want to intervene _after_ the animation loop
+//
+// setting variable 'activityState' to any value inside range 0-7 will resume normal drawing next loop
+//
+// function custom_postdraw()
+// {
+// }
 
 //
 //  F0 shows the attention grabbing animation meant to seduce you to interact
