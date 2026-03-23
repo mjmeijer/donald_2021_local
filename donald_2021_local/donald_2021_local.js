@@ -184,6 +184,8 @@ var startFrame;
 var test;
 var game, reply;
 function changeState(newState) {
+  // Validate state is within valid range [0,7]
+  newState = Math.max(0, Math.min(7, Math.floor(newState)));
   startFrame = frameCount;
   lastLevel = currentLevel;
   currentLevel = testLevel;
@@ -274,25 +276,25 @@ function handleCheckResponse() {
 // State 5
 function handleTimeOut() {
   showTimeout();
-  // TODO post the result as timeout
+  // Result already posted in handleCheckResponse() when timeout condition met
   if (frameCount - startFrame > T5_TIMEOUT) {
     if (typeof custom_timeout === "function") {
-      changeState(custom_timeout());
+      var nextState = custom_timeout();
+      // Ensure custom handler returns a valid state, otherwise reset to idle
+      changeState(typeof nextState === 'number' ? nextState : 0);
     } else {
       testLevel = 0;
       changeState(0);
     }
-    //    print("Timeout!");
   }
 }
 
 // State 6
 function handleSuccess() {
   showSuccess();
-  // TODO post the result as success
+  // Result already posted in handleCheckResponse() with 'correct' status
   if (frameCount - startFrame > T6_CORRECT) {
     testLevel += 1;
-    //    print("Success! new test level : " + testLevel);
     changeState(1);
   }
 }
@@ -300,10 +302,9 @@ function handleSuccess() {
 // State 7
 function handleFailure() {
   showFailure();
-  // TODO post the result as failure
+  // Result already posted in handleCheckResponse() with 'wrong' status
   if (frameCount - startFrame > T7_INCORRECT) {
     testLevel = max(testLevel - 1, 0) ;
-    //    print("Failure! new test level : " + testLevel);
     if (testLevel == 0) {
       changeState(0);
     } else {
