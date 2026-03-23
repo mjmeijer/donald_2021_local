@@ -12,13 +12,9 @@
 //  In der Beschränkung zeigt sich erst der Meister -- J W von Goethe (1802)
 //
 
-// Local helper to rotate array elements without mutating Array.prototype
-function rotateRight( arr, n ) {
-  if (!arr || arr.length === 0) return arr;
-  var normalized = n % arr.length;
-  var result = arr.slice();
-  result.unshift.apply( result, result.splice( normalized, result.length ) );
-  return result;
+Array.prototype.rotateRight = function( n ) {
+  this.unshift.apply( this, this.splice( n, this.length ) );
+  return this;
 }
 
 var blackColors = new Array(
