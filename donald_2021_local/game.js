@@ -3,7 +3,7 @@
 //
 // game.js
 //
-//  a game is representen by an array of values
+//  A game is represented by an array of random values (0-3)
 //
 //
 
@@ -14,7 +14,7 @@ function getRandomInt(max) {
 function Game(levels) {
   this.levels = levels;
   this.values = [];
-  for(i = 0; i < levels; i++) {
+  for(var i = 0; i < levels; i++) {
     this.values.push(getRandomInt(4));
   }
 }
