@@ -3,7 +3,7 @@
 //
 // game.js
 //
-//  a game is representen by an array of values
+//  A game is represented by an array of random values (0-3)
 //
 //
 
