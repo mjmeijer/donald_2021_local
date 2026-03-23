@@ -44,7 +44,7 @@ function setup() {
     custom_setup(windowWidth, windowHeight);
   }
 
-//  print("Hello Donald_2025");
+  //  print("Hello Donald_2025");
 }
 
 function windowResized() {
@@ -64,34 +64,34 @@ function distance(x1, y1, x2, y2) {
  * touch events, like swiping left for "back" or scrolling
  * the page.
  */
-function touchStarted(){
-  if(isLooping()) return false;
+function touchStarted() {
+  if (isLooping()) {return false;}
 }
 
-function touchMoved(){
-  if(isLooping()) return false;
+function touchMoved() {
+  if (isLooping()) {return false;}
 }
 
 
 function touchEnded() {
-  if(isLooping()) {
+  if (isLooping()) {
 
-  ellipse(mouseX, mouseY, 50, 50);
+    ellipse(mouseX, mouseY, 50, 50);
 
-  if (distance(mouseX, mouseY, windowWidth/2, windowHeight/2) < 150) {
-    fullscreen(!fullscreen());
-    return;
-  }
-  // prevent default
-  b = 0;
-  if (mouseX > windowWidth / 2) {
-    b += 2;
-  }
-  if (mouseY > windowHeight / 2) {
-    b += 1;
-  }
-  lastButton = Array(0, 1, 3, 2)[b];
-  return false;
+    if (distance(mouseX, mouseY, windowWidth/2, windowHeight/2) < 150) {
+      fullscreen(!fullscreen());
+      return;
+    }
+    // prevent default
+    b = 0;
+    if (mouseX > windowWidth / 2) {
+      b += 2;
+    }
+    if (mouseY > windowHeight / 2) {
+      b += 1;
+    }
+    lastButton = Array(0, 1, 3, 2)[b];
+    return false;
   }
 }
 
@@ -105,7 +105,7 @@ function ledring(x, y, colors) {
   fill('rgb(10,255,0)');
   textAlign(CENTER, CENTER);
   textSize(32);
-//  text('level ' + testLevel, 0, -20);
+  //  text('level ' + testLevel, 0, -20);
   text(testID, 0, 0);
   textSize(16);
   text('level ' + testLevel, 0, -40);
