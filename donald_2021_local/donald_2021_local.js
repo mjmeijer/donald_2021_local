@@ -12,9 +12,13 @@
 //  In der Beschränkung zeigt sich erst der Meister -- J W von Goethe (1802)
 //
 
-Array.prototype.rotateRight = function( n ) {
-  this.unshift.apply( this, this.splice( n, this.length ) );
-  return this;
+// Local helper to rotate array elements without mutating Array.prototype
+function rotateRight( arr, n ) {
+  if (!arr || arr.length === 0) return arr;
+  var normalized = n % arr.length;
+  var result = arr.slice();
+  result.unshift.apply( result, result.splice( normalized, result.length ) );
+  return result;
 }
 
 var blackColors = new Array(
@@ -106,7 +110,7 @@ function ledring(x, y, colors) {
   textAlign(CENTER, CENTER);
   textSize(32);
   //  text('level ' + testLevel, 0, -20);
-  text(testID, 0, 0);
+  text(typeof testID !== 'undefined' ? testID : 'TEST', 0, 0);
   textSize(16);
   text('level ' + testLevel, 0, -40);
   text(frameCount, 0, 40);
@@ -152,7 +156,8 @@ function showButtons() {
 }
 
 function postResults(req, rec, status, time) {
-  data = testID + '\t'
+  var testIDguard = typeof testID !== 'undefined' ? testID : 'UNKNOWN';
+  var data = testIDguard + '\t'
     + testCounter + '\t'
     + id + '\t'
     + T0_IDLE + '\t'

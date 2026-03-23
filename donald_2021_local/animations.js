@@ -113,7 +113,7 @@ function showIdle() {
   if (frameCount % T0_IDLE == 0) {
     showButtons();
     showLeds(idleColors);
-    idleColors.rotateRight(-1);
+    idleColors = rotateRight(idleColors, -1);
   }
 }
 
@@ -140,7 +140,7 @@ function showPrepare() {
   if (frameCount % (T1_WARN / 12) == 0) {
     showButtons();
     showLeds(prepColors);
-    prepColors.rotateRight(1);
+    prepColors = rotateRight(prepColors, 1);
   }
 }
 
@@ -165,9 +165,9 @@ var   blokColors = new Array(
 
 function showTestStep(index) {
   showButtons();
-  blokColors.rotateRight(-3 * index); // rotate to proper position
+  blokColors = rotateRight(blokColors, -3 * index); // rotate to proper position
   showLeds(blokColors);
-  blokColors.rotateRight(3 * index); // rotate back for next block
+  blokColors = rotateRight(blokColors, 3 * index); // rotate back for next block
 }
 
 //
@@ -192,7 +192,7 @@ var decayColors = new Array(
 function showDecay() {
   if (frameCount % (T3_DECAY / 12) == 0) {
     showLeds(decayColors);
-    decayColors.rotateRight(3);
+    decayColors = rotateRight(decayColors, 3);
   }
 }
 
@@ -219,7 +219,7 @@ function showCountdown() {
   if (frameCount % (T4_COUNTDOWN / 12) == 0) {
     showButtons();
     showLeds(countColors);
-    countColors.rotateRight(-1);
+    countColors = rotateRight(countColors, -1);
   }
 }
 
@@ -247,7 +247,7 @@ function showTimeout() {
   if (frameCount % (T5_TIMEOUT / 12) == 0) {
     showButtons();
     showLeds(timeoutColors);
-    timeoutColors.rotateRight(-1);
+    timeoutColors = rotateRight(timeoutColors, -1);
   }
 }
 
