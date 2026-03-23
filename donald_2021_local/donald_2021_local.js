@@ -83,7 +83,7 @@ function touchEnded() {
       return;
     }
     // prevent default
-    b = 0;
+    var b = 0;
     if (mouseX > windowWidth / 2) {
       b += 2;
     }
@@ -112,7 +112,7 @@ function ledring(x, y, colors) {
   text(frameCount, 0, 40);
   // end show test level
   rotate (radians(15));
-  for (i = 0; i < 12; i++) {
+  for (var i = 0; i < 12; i++) {
     fill(colors[i]);
     rotate (radians(-30));
     rectMode(CENTER);
@@ -131,8 +131,8 @@ function showLeds(leds) {
 
 function buttons(x, y, w, h) {
   push();
-  w2 = w / 2;
-  h2 = h / 2;
+  var w2 = w / 2;
+  var h2 = h / 2;
   translate(x, y);
   stroke(127, 127, 127);
   fill(10, 10, 10, 127);
@@ -152,7 +152,7 @@ function showButtons() {
 }
 
 function postResults(req, rec, status, time) {
-  data = testID + '\t'
+  var data = testID + '\t'
     + testCounter + '\t'
     + id + '\t'
     + T0_IDLE + '\t'
