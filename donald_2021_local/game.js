@@ -1,5 +1,5 @@
 //
-// (c) Copyright 2021-2025 Maarten Meijer / Amsterdam University of Applied Science
+// (c) Copyright 2021-2026 Maarten Meijer / Amsterdam University of Applied Science
 //
 // game.js
 //

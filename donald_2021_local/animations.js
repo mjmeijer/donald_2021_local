@@ -1,14 +1,14 @@
 //
-// (c) Copyright 2021-2025 Maarten Meijer / Amsterdam University of Applied Science
+// (c) Copyright 2021-2026 Maarten Meijer / Amsterdam University of Applied Science
 //
 // Timing in frames (not milliseconds). Running at 60 FPS, so timing in seconds
 // can be calculated as: T / 60. For example, T1_WARN = 120 frames = 2 seconds.
 //
 //
-//  Change the ID 'YOUR_GROUP' to the number/version of your group to be able to find
-//  or filter your data in the datasets. Example: 'GRP08E'
+//  Change the id 'YOUR_GROUP_YOUR_NAME' to the number/version of your group to be able to find
+//  or filter your data in the datasets. Example 'GRP08E'
 //
-var id             = 'YOUR_GROUP';
+var id             = 'YOUR_GROUP_YOUR_NAME'; // change this to your group name and optionally your name, e.g. 'GRP08E' or 'GRP08E_MAARTEN'
 
 var T0_IDLE        = 20; // one idle step
 var T1_WARN        = 120;

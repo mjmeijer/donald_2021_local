@@ -1,5 +1,5 @@
 //
-// (c) Copyright 2021-2025 Maarten Meijer / Amsterdam University of Applied Science
+// (c) Copyright 2021-2026 Maarten Meijer / Amsterdam University of Applied Science
 //
 // IMPORTANT! DO NOT MAKE ANY CHANGES IN THIS FILE!!
 //
@@ -213,7 +213,7 @@ function handlePrepare() {
     game = new Game(testLevel);
     reply = [];
     testCounter += 1;
-    print('game : ' + game.toString());
+//    print('game : ' + game.toString());
     changeState(2);
   }
 }
@@ -287,6 +287,7 @@ function handleTimeOut() {
       testLevel = 0;
       changeState(0);
     }
+//    print("Timeout!");
   }
 }
 
