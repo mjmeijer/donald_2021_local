@@ -8,7 +8,7 @@
 //  Change the id 'YOUR_GROUP_YOUR_NAME' to the number/version of your group to be able to find
 //  or filter your data in the datasets. Example 'GRP08E'
 //
-var id             = 'YOUR_GROUP_YOUR_NAME'; // change this to your group name and optionally your name, e.g. 'GRP08E' or 'GRP08E_MAARTEN'
+var id             = 'YOUR_GROUP'; // change this to your group name and optionally your name, e.g. 'GRP08E' or 'GRP08E_MAARTEN'
 
 var T0_IDLE        = 20; // one idle step
 var T1_WARN        = 120;
